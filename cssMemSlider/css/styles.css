@@ -13,7 +13,7 @@ input {
 .container {
     width: 100%;
     height: 100%;
-    max-width: 60em;
+    max-width: 55em;
     margin: 0 auto;
 }
 
@@ -161,7 +161,6 @@ input {
     }
 }
 
-
 @media screen and (max-width: 768px) {
     .container {
         max-width: calc(100% - 2rem);
@@ -193,5 +192,9 @@ input {
     .image img {
         width: 100%;
         border-radius: 0.5rem;
+    }
+
+    .copyright{
+        font-size: 1rem;
     }
 }
