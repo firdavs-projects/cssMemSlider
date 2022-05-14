@@ -1,0 +1,198 @@
+body {
+    height: 100vh;
+    color: white;
+    background: black;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+}
+
+input {
+    display: none;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.nav {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.slider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.slider_images {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    overflow: hidden;
+    flex-wrap: nowrap;
+
+}
+
+.image {
+    width: 100%;
+    min-width: 100%;
+    transition: all 0.5s ease-in-out;
+}
+
+.image img {
+    width: 100%;
+    border-radius: 1rem;
+}
+
+.names {
+    display: flex;
+    justify-content: end;
+    flex-direction: row-reverse;
+    overflow: hidden;
+    flex-wrap: nowrap;
+    margin: 1rem 0;
+    padding: 0;
+}
+
+.name {
+    width: 100%;
+    min-width: 100%;
+    display: flex;
+    justify-content: start;
+    align-items: flex-start;
+    transition: all 0.5s ease-in-out;
+}
+
+.controls {
+    display: flex;
+}
+
+.control {
+    height: 100%;
+    width: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 1rem 0;
+}
+
+.control_btn {
+    width: 0.7rem;
+    height: 0.7rem;
+    border-radius: 100%;
+    border: 0.1rem solid white;
+    transition: .3s;
+}
+
+.control:hover .control_btn {
+    background-color: gray;
+}
+
+.control:active .control_btn {
+    background-color: red;
+}
+
+.slides_info {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+#slide1:checked ~ .slides_info > .controls > label[for="slide1"] > .control_btn,
+#slide2:checked ~ .slides_info > .controls > label[for="slide2"] > .control_btn,
+#slide3:checked ~ .slides_info > .controls > label[for="slide3"] > .control_btn,
+#slide4:checked ~ .slides_info > .controls > label[for="slide4"] > .control_btn,
+#slide5:checked ~ .slides_info > .controls > label[for="slide5"] > .control_btn {
+    background-color: darkorange;
+}
+
+#slide1:checked ~ .slider_images > .image {
+    transform: translateX(0);
+}
+
+#slide2:checked ~ .slider_images > .image {
+    transform: translateX(-100%);
+}
+
+#slide3:checked ~ .slider_images > .image {
+    transform: translateX(-200%);
+}
+
+#slide4:checked ~ .slider_images > .image {
+    transform: translateX(-300%);
+}
+
+#slide5:checked ~ .slider_images > .image {
+    transform: translateX(-400%);
+}
+
+#slide1:checked ~ .slides_info > .names > .name {
+    transform: translateX(0);
+}
+
+#slide2:checked ~ .slides_info > .names > .name {
+    transform: translateX(100%);
+}
+
+#slide3:checked ~ .slides_info > .names > .name {
+    transform: translateX(200%);
+}
+
+#slide4:checked ~ .slides_info > .names > .name {
+    transform: translateX(300%);
+}
+
+#slide5:checked ~ .slides_info > .names > .name {
+    transform: translateX(400%);
+}
+
+@media screen and (max-width: 1024px) {
+    .container {
+        max-width: calc(100% - 10rem);
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .container {
+        max-width: calc(100% - 2rem);
+        height: 100vh;
+    }
+
+    .nav{
+        display: block;
+        text-align: center;
+    }
+
+    .title{
+        margin-top: 0;
+        padding-top: 1rem;
+        font-size: 1.2rem;
+    }
+
+    .subtitle{
+        font-size: 1rem;
+        font-weight: normal;
+    }
+
+    .slides_info {
+        flex-direction: column-reverse;
+        width: 100%;
+        align-items: center;
+    }
+
+    .image img {
+        width: 100%;
+        border-radius: 0.5rem;
+    }
+}
