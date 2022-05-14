@@ -13,7 +13,7 @@ input {
 .container {
     width: 100%;
     height: 100%;
-    max-width: 900px;
+    max-width: 60em;
     margin: 0 auto;
 }
 
@@ -39,7 +39,6 @@ input {
     align-items: center;
     overflow: hidden;
     flex-wrap: nowrap;
-
 }
 
 .image {
@@ -69,7 +68,7 @@ input {
     display: flex;
     justify-content: start;
     align-items: flex-start;
-    transition: all 0.5s ease-in-out;
+    transition: all 0.8s ease-in-out;
 }
 
 .controls {
@@ -91,7 +90,7 @@ input {
     height: 0.7rem;
     border-radius: 100%;
     border: 0.1rem solid white;
-    transition: .3s;
+    transition: 0.5s;
 }
 
 .control:hover .control_btn {
